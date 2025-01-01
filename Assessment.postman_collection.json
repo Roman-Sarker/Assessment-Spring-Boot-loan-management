@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "f24a48a5-b7ef-41f7-bcc6-4cf9cbbd444b",
+		"name": "Assessment",
+		"description": "**Spring Boot Project (Back-End)**\n\n## Features\n\n- Manage loans and customer information.\n    \n- Database integration using JPA.\n    \n- Querying with custom DTOs for optimized data transfer.\n    \n- Used join query on Loan and Customer to fetch and present combined information efficiently.\n    \n- Used AOP for logging to centralize and simplify logging across the application.\n    \n- Unit testing with JUnit and Mockito.\n    \n- Extendable architecture for future API integrations.\n    \n- Structured project directory and Maven-based dependency management.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5921320"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/loans",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"amount\": 160000,\r\n  \"tenure\": 50,\r\n  \"interestRate\": 8.5,\r\n  \"customerId\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/loans",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loans"
+					]
+				},
+				"description": "Save Loan"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/loans",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/loans",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loans"
+					]
+				},
+				"description": "Return all Loan records"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/loans/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/loans/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loans",
+						"1"
+					]
+				},
+				"description": "Get Loan by Id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/loans/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"amount\": 150000,\r\n  \"tenure\": 50,\r\n  \"interestRate\": 7.9,\r\n  \"customerId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/loans/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loans",
+						"1"
+					]
+				},
+				"description": "Update loan record by id."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/loans/2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/loans/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loans",
+						"2"
+					]
+				},
+				"description": "Delete loan by id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/loans/search?page=0&size=5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/loans/search?page=0&size=5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loans",
+						"search"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				},
+				"description": "Return perticular loan by id or all loan with pagination."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/loans/with-customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/loans/with-customers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loans",
+						"with-customers"
+					]
+				},
+				"description": "Return loan info with respective customer using join query on Loan and Customer table."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/customer/installmentHistory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/customer/installmentHistory",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"installmentHistory"
+					]
+				},
+				"description": "Return installment history of customers by calling external API."
+			},
+			"response": []
+		}
+	]
+}
