@@ -1,7 +1,7 @@
 # Car Loan Management System
 
 ## Overview
-The **Car Loan Management System** is a Spring Boot application designed to manage car loans efficiently. It integrates modern technologies and best practices to provide a robust solution for car loan management.
+The **Car Loan Management System** is a Spring Boot application designed to manage car loans efficiently. It integrates modern technologies and best practices to provide a solution for car loan management.
 
 ---
 
@@ -35,21 +35,21 @@ The **Car Loan Management System** is a Spring Boot application designed to mana
 ## Endpoints
 ### Loan Management
 - `POST /localhost:8080/loans` - Create a new loan.
-- `GET /localhost:8080/loans/search?loanId=&page=0&size=2` - Retrieve specific or all loans with pagination.
-- `GET /localhost:8080/loans/with-customers` - Retrieve loans and respective customer info by join query on two table.
+- `GET /localhost:8080/loans/search?loanId=&page=0&size=2` - Retrieve specific or all loan details with pagination.
+- `GET /localhost:8080/loans/with-customers` - Retrieve loan and respective customer details by joining the query between two tables.
 - `PUT /localhost:8080/loans/{id}` - Update loan by id.
 - `DELETE /localhost:8080/loans/{id}` - Delete loan by id.
-- `GET /localhost:8080/loans/{id}` - Retrieve loans by id.
+- `GET /localhost:8080/loans/{id}` - Retrieve loan details by id.
 - `GET /localhost:8080/loans` - Retrieve all loans.
 
 ### Customer Management
-- `GET /localhost:8080/customer/installmentHistory` - Called external API (Dummy API) from service class method
+- `GET /localhost:8080/customer/installmentHistory` - Called external API (https://dummyjson.com/c/e5f5-0745-49e8-acf5) from service class method
 ---
 
 ## Setup
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Roman-Sarker/Assessment-Spring-Boot-loan-management.git
    cd car-loan-management
    ```
 
@@ -64,9 +64,8 @@ The **Car Loan Management System** is a Spring Boot application designed to mana
    ```
 
 4. **Access the Application by Postman**:
-   - Postman Collection Added
-
-
+   - Postman Collection Added inside project (Assessment.postman_collection.json)
+   
 ---
 
 ## Unit Testing
@@ -111,5 +110,8 @@ car-loan-management
 ---
 
 ## Author
-Developed by Roman Sarker (Senior Java Developer)
+Developed by Roman Sarker 
+Senior Java Developer
+mdroman601@gmail.com
+
 
